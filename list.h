@@ -3,6 +3,8 @@
 
 #include "float.h"
 
+// Generic Meta List : Head -> Tail, ends with Nil
+
 struct Nil
 {
 	typedef Nil Head;
@@ -16,6 +18,7 @@ struct List
 	typedef Tail_ Tail;
 };
 
+// Computes the length of the list
 
 template<class List>
 struct Length
@@ -32,6 +35,8 @@ struct Length<Nil>
 		value = 0 
 	}; 
 };
+
+// Computes the sum of all the elements of the list
 
 template <class List, template <class> class Selector>
 struct sum
